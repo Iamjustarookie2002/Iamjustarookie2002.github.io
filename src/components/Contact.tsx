@@ -28,9 +28,9 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 px-6 contact-section-bg">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
-          <div className="w-24 h-1 bg-[#7cb6fe] mx-auto mb-4"></div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Get In Touch</h2>
+          <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-4"></div>
+          <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you!
           </p>
         </div>
@@ -39,8 +39,8 @@ const Contact: React.FC = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-white mb-6">Let's Connect</h3>
-              <p className="text-gray-300 leading-relaxed mb-8">
+              <h3 className="text-2xl font-bold text-[var(--text-main)] mb-6">Let's Connect</h3>
+              <p className="text-[var(--text-secondary)] leading-relaxed mb-8">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a chat about technology and development. Feel free to reach out!
               </p>
@@ -49,38 +49,38 @@ const Contact: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="p-3 card-blur rounded-lg global-hover-bg transition-all">
-                  <Mail className="h-6 w-6 text-[#7cb6fe]" />
+                  <Mail className="h-6 w-6 text-[var(--primary)]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Email</h4>
-                  <p className="text-gray-300">rkudikal@purdue.edu</p>
+                  <h4 className="text-[var(--text-main)] font-semibold">Email</h4>
+                  <p className="text-[var(--text-secondary)]">rkudikal@purdue.edu</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
                 <div className="p-3 card-blur rounded-lg global-hover-bg transition-all">
-                  <Phone className="h-6 w-6 text-[#7cb6fe]" />
+                  <Phone className="h-6 w-6 text-[var(--primary)]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Phone</h4>
-                  <p className="text-gray-300">(657) 623-6035</p>
+                  <h4 className="text-[var(--text-main)] font-semibold">Phone</h4>
+                  <p className="text-[var(--text-secondary)]">(657) 623-6035</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-4">
                 <div className="p-3 card-blur rounded-lg global-hover-bg transition-all">
-                  <MapPin className="h-6 w-6 text-[#7cb6fe]" />
+                  <MapPin className="h-6 w-6 text-[var(--primary)]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold">Location</h4>
-                  <p className="text-gray-300">West Lafayette, Indiana, USA</p>
+                  <h4 className="text-[var(--text-main)] font-semibold">Location</h4>
+                  <p className="text-[var(--text-secondary)]">West Lafayette, Indiana, USA</p>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
             <div>
-              <h4 className="text-white font-semibold mb-4">Follow Me</h4>
+              <h4 className="text-[var(--text-main)] font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a
                   href="https://github.com"
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="p-3 card-blur rounded-lg global-hover-bg transition-all"
                 >
-                  <Github className="h-6 w-6 text-[#7cb6fe]" />
+                  <Github className="h-6 w-6 text-[var(--primary)]" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/rishikesh-kudikala"
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="p-3 card-blur rounded-lg global-hover-bg transition-all"
                 >
-                  <Linkedin className="h-6 w-6 text-[#7cb6fe]" />
+                  <Linkedin className="h-6 w-6 text-[var(--primary)]" />
                 </a>
                 <a
                   href="https://twitter.com"
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                   rel="noopener noreferrer"
                   className="p-3 card-blur rounded-lg global-hover-bg transition-all"
                 >
-                  <Twitter className="h-6 w-6 text-[#7cb6fe]" />
+                  <Twitter className="h-6 w-6 text-[var(--primary)]" />
                 </a>
               </div>
             </div>
@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-white font-medium mb-2">
+                  <label htmlFor="name" className="block text-[var(--text-main)] font-medium mb-2">
                     Name
                   </label>
                   <input
@@ -125,12 +125,12 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all"
+                    className="w-full px-4 py-3 bg-[var(--bg-card)]/50 border border-[var(--border-main)] rounded-lg text-[var(--text-main)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
                     placeholder="Your Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-white font-medium mb-2">
+                  <label htmlFor="email" className="block text-[var(--text-main)] font-medium mb-2">
                     Email
                   </label>
                   <input
@@ -140,14 +140,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all"
+                    className="w-full px-4 py-3 bg-[var(--bg-card)]/50 border border-[var(--border-main)] rounded-lg text-[var(--text-main)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-white font-medium mb-2">
+                <label htmlFor="subject" className="block text-[var(--text-main)] font-medium mb-2">
                   Subject
                 </label>
                 <input
@@ -157,13 +157,13 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all"
+                  className="w-full px-4 py-3 bg-[var(--bg-card)]/50 border border-[var(--border-main)] rounded-lg text-[var(--text-main)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all"
                   placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-white font-medium mb-2">
+                <label htmlFor="message" className="block text-[var(--text-main)] font-medium mb-2">
                   Message
                 </label>
                 <textarea
@@ -173,16 +173,16 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-400/20 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-[var(--bg-card)]/50 border border-[var(--border-main)] rounded-lg text-[var(--text-main)] placeholder-[var(--text-secondary)]/60 focus:outline-none focus:border-[var(--primary)] focus:ring-2 focus:ring-[var(--primary)]/20 transition-all resize-none"
                   placeholder="Tell me about your project or just say hello!"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-[#7cb6fe] hover:bg-white text-black font-semibold rounded-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#7cb6fe]/50"
+                className="w-full flex items-center justify-center space-x-2 px-6 py-3 bg-[var(--primary)] hover:bg-[var(--hover-btn)] text-[var(--bg-main)] font-semibold rounded-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50"
               >
-                <Send className="h-5 w-5 text-black" />
+                <Send className="h-5 w-5 text-[var(--bg-main)]" />
                 <span>Send Message</span>
               </button>
             </form>

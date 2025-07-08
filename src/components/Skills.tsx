@@ -39,9 +39,9 @@ const Skills: React.FC = () => {
     <section id="skills" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Skills & Technologies</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto mb-4"></div>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Skills & Technologies</h2>
+          <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-4"></div>
+          <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
             A comprehensive overview of the technologies and tools I work with
           </p>
         </div>
@@ -56,7 +56,7 @@ const Skills: React.FC = () => {
                 <div className="p-3 rounded-lg text-[var(--primary)] border border-[var(--primary)] mr-4 global-hover-bg">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                <h3 className="text-xl font-bold text-[var(--text-main)]">{category.title}</h3>
               </div>
               
               <div className="flex flex-wrap gap-2">

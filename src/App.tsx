@@ -48,7 +48,7 @@ function App() {
       {showScrollTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-purple-600 text-white shadow-lg hover:bg-purple-700 transition-colors duration-200"
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-[var(--primary)] text-[var(--text-main)] shadow-lg hover:bg-[var(--hover-btn)] transition-colors duration-200"
           aria-label="Scroll to top"
         >
           <ArrowUp className="h-6 w-6" />

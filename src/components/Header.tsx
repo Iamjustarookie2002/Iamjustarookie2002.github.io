@@ -78,9 +78,9 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Code className="h-8 w-8 text-blue-300" />
+            <Code className="h-8 w-8 text-[var(--primary)]" />
             <span
-              className="text-xl font-bold text-white cursor-pointer hover:text-purple-400 transition-colors"
+              className="text-xl font-bold text-[var(--text-main)] cursor-pointer hover:text-[var(--hover-text)] transition-colors"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               Iamjustarookie
@@ -94,8 +94,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
-                    currentSection === item.id ? 'text-purple-400' : 'text-gray-300'
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
+                    currentSection === item.id ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}
@@ -106,17 +106,17 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="ml-6 p-2 rounded-full border border-gray-700 hover:bg-gray-700/20 transition-colors"
+              className="ml-6 p-2 rounded-full border border-[var(--border-main)] hover:bg-[var(--hover-bg)]/20 transition-colors"
               aria-label="Toggle theme"
             >
-              {theme === 'dark' ? <Sun className="h-6 w-6 text-white" /> : <Moon className="h-6 w-6 text-gray-800" />}
+              {theme === 'dark' ? <Sun className="h-6 w-6 text-[var(--text-main)]" /> : <Moon className="h-6 w-6 text-[var(--text-main)]" />}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white hover:text-purple-400 transition-colors"
+            className="md:hidden text-[var(--text-main)] hover:text-[var(--hover-text)] transition-colors"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -130,8 +130,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left text-sm font-medium transition-colors duration-200 hover:text-purple-400 ${
-                    currentSection === item.id ? 'text-purple-400' : 'text-gray-300'
+                  className={`text-left text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
+                    currentSection === item.id ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}
