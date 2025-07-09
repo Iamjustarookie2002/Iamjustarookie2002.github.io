@@ -1,37 +1,47 @@
 import React from 'react';
-import { Code, Database, Globe, Smartphone, Cloud, Palette } from 'lucide-react';
+import { Code, Database, Globe, Smartphone, Cpu, Zap, Layers, Terminal } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
       icon: <Code className="h-8 w-8 text-[var(--primary)]" />,
       title: "Programming Languages",
-      skills: ["C", "C++", "Golang", "Java", "JavaScript", "Python", "SQL", "HTML"]
+      skills: ["C", "C++", "Golang", "Python", "Java", "JavaScript", "HTML", "SQL", "Bash", "TypeScript", "CUDA"]
+    },
+    {
+      icon: <Layers className="h-8 w-8 text-[var(--primary)]" />,
+      title: "Frameworks & Libraries",
+      skills: ["React.js", "React Native", "Node.js", "Express.js", "Gin", "Cobra", "Django", "TensorFlow", "PyTorch", "Pandas", "NumPy", "Matplotlib", "Socket.IO", "Streamlit", "Lex", "Yacc"]
+    },
+    {
+      icon: <Terminal className="h-8 w-8 text-[var(--primary)]" />,
+      title: "Tools & Platforms",
+      skills: ["Git", "Postman", "Docker", "Kubernetes", "AWS", "Azure", "Visual Studio Code", "Jupyter Notebook", "Google Colab", "Wireshark", "Logisim", "FAISS", "Tesseract OCR", "Salesforce BLIP", "Mistral LLM"]
     },
     {
       icon: <Database className="h-8 w-8 text-[var(--primary)]" />,
-      title: "Databases & Software",
-      skills: ["PostgreSQL", "MySQL", "MongoDB", "Docker", "Kubernetes", "AWS", "Azure"]
+      title: "Databases",
+      skills: ["PostgreSQL", "MySQL", "MongoDB"]
+    },
+    {
+      icon: <Cpu className="h-8 w-8 text-[var(--primary)]" />,
+      title: "AI & ML Technologies",
+      skills: ["Retrieval-Augmented Generation (RAG)", "OCR", "LLM Deployment", "Image Captioning", "BLEU Score Evaluation", "Machine Learning", "Data Science"]
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-[var(--primary)]" />,
+      title: "Development & APIs",
+      skills: ["REST APIs", "GRPC", "CLI Tools", "Full Stack Development", "Cache Management"]
     },
     {
       icon: <Smartphone className="h-8 w-8 text-[var(--primary)]" />,
-      title: "Frameworks & Libraries",
-      skills: ["React.js", "Node.js", "React Native", "Django", "TensorFlow", "Pandas", "NumPy"]
-    },
-    {
-      icon: <Cloud className="h-8 w-8 text-[var(--primary)]" />,
-      title: "Development Tools",
-      skills: ["Visual Studio Code", "Git", "Postman", "Jupyter Notebook", "Google Colab", "Wireshark"]
-    },
-    {
-      icon: <Palette className="h-8 w-8 text-[var(--primary)]" />,
-      title: "Specialized Skills",
-      skills: ["Data Structures", "Algorithms", "Machine Learning", "Information Security", "Parallel Computing"]
+      title: "Core Concepts",
+      skills: ["Object-Oriented Programming", "Data Structures", "Algorithms", "Operating Systems", "Compilers", "Computer Networks", "Parallel Computing", "Information Security"]
     },
     {
       icon: <Globe className="h-8 w-8 text-[var(--primary)]" />,
-      title: "Advanced Topics",
-      skills: ["Operating Systems", "Computer Networks", "Compilers", "Full Stack Development", "Data Science"]
+      title: "Specialized Skills",
+      skills: ["Custom Programming Languages", "Cache Management", "Full Stack Development"]
     }
   ];
 
