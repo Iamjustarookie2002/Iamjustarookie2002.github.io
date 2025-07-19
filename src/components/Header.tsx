@@ -45,8 +45,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
 
   const navItems = [
     currentSection === 'journey'
-      ? { id: 'intro', label: 'Intro' }
-      : { id: 'journey', label: 'Journey' },
+      ? { id: 'journey', label: 'Journey' }
+      : { id: 'intro', label: 'Intro' },
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
@@ -54,13 +54,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
   ];
 
   const scrollToSection = (sectionId: string) => {
-    if (sectionId === 'journey' && onJourneyClick) {
-      onJourneyClick();
-      setIsMenuOpen(false);
-      return;
-    }
-    if (sectionId === 'intro' && onGoBackToIntro) {
-      onGoBackToIntro();
+    if (sectionId === 'intro' || sectionId === 'journey') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       setIsMenuOpen(false);
       return;
     }
@@ -94,8 +89,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
-                    currentSection === item.id ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] capitalize ${
+                    currentSection === item.id ? (item.id === 'journey' ? 'text-white' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}
@@ -130,8 +125,8 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-left text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
-                    currentSection === item.id ? 'text-[var(--primary)]' : 'text-[var(--text-secondary)]'
+                  className={`text-left text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] capitalize ${
+                    currentSection === item.id ? (item.id === 'journey' ? 'text-white' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}

@@ -3,9 +3,10 @@ import { GraduationCap, Award, Code } from 'lucide-react';
 
 interface JourneyProps {
   onJourneyNodeClick?: (id: string) => void;
+  onGoBack?: () => void;
 }
 
-const Journey: React.FC<JourneyProps> = ({ onJourneyNodeClick }) => {
+const Journey: React.FC<JourneyProps> = ({ onJourneyNodeClick, onGoBack }) => {
   const timelineData = [
     {
       year: "2024",
@@ -108,12 +109,12 @@ const Journey: React.FC<JourneyProps> = ({ onJourneyNodeClick }) => {
   return (
     <section id="journey" className="min-h-screen py-20 px-6">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4"> My (<span className='line-through font-normal'>Exhaustive</span>) Exciting Journey</h1>
+        <div className="text-center mb-16 mt-20">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4"> My <span className='blue-text-white-strike font-normal'>Exhausting</span> <span className="text-4xl md:text-5xl font-normal mb-4">Exciting Journey</span></h1>
           <div className="w-24 h-1 bg-white mx-auto"></div>
         </div>
         {/* Horizontal Timeline */}
-        <div className="relative mt-72">
+        <div className="relative mt-52">
           {/* Timeline line */}
           <div className="absolute left-8 right-8 top-1/2 transform -translate-y-1/2 h-1 bg-white"></div>
           {/* Start and end years */}
@@ -194,6 +195,18 @@ const Journey: React.FC<JourneyProps> = ({ onJourneyNodeClick }) => {
             <div className="w-4 h-4 rounded-full bg-white border-2 border-white z-10"></div>
           </div>
         </div>
+        
+        {/* Back to Intro Button */}
+        {onGoBack && (
+          <div className="flex justify-center mt-16">
+            <button
+              onClick={onGoBack}
+              className="text-[#7cb6fe] hover:text-white font-semibold text-lg transition-colors duration-300 hover:scale-105 transform flex items-center gap-2"
+            >
+              ← Back to Intro
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

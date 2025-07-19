@@ -93,11 +93,15 @@ html {
   text-align: center;
   position: relative;
   z-index: 1;
+  background: linear-gradient(to right,  #227cea, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Animated welcome font size and overlay */
 .animated-welcome {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-family: 'Shadows Into Light', cursive;
   text-align: center;
   position: absolute;
@@ -110,13 +114,17 @@ html {
   justify-content: center;
   white-space: nowrap;
   z-index: 1;
+  background: linear-gradient(to right, #227cea, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Underline bar */
 .intro-underline {
   max-width: 70%;
   height: 2px;
-  background: linear-gradient(to right, #77d2e8, #fff, #aaa);
+  background: linear-gradient(to right, #227cea, #ffffff);
   transition: width 3s cubic-bezier(0.23, 1, 0.32, 1);
   margin-left: auto;
   margin-right: auto;
@@ -125,7 +133,25 @@ html {
 /* Static hero name font size */
 .static-hero-name {
   font-size: clamp(2.5rem, 8vw, 5rem);
-  color: #92b8c1;
+  background: linear-gradient(to right, #227cea, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Journey heading gradient */
+.journey-heading {
+  background: linear-gradient(to right, #4691ed, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Blue text with white strikethrough */
+.blue-text-white-strike {
+  color: #5799e9;
+  text-decoration: line-through;
+  text-decoration-color: white;
 }
 
 /* === SECTION BACKGROUNDS & COLORS === */
@@ -195,9 +221,7 @@ body {
   color: var(--text-main);
 }
 
-.static-hero-name {
-  color: var(--text-main);
-}
+
 
 .card-blur, .about-card-bg, .skills-card-bg, .projects-card-bg, .journey-card-bg, .contact-card-bg {
   background: var(--bg-card) !important;

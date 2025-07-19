@@ -34,9 +34,10 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      {/* <div className="min-h-screen bg-gradient-to-r from-[#023E8A] via-gray-800 to-[#03045E]">*/}
       <Header currentSection={currentSection === 'intro' ? 'anime' : 'journey'} onJourneyClick={handleJourneyClick} onGoBackToIntro={handleGoBackToIntro} />
       {currentSection === 'intro' ? (
-        <Intro fromJourney={cameFromJourney} />
+        <Intro fromJourney={cameFromJourney} onJourneyClick={handleJourneyClick} />
       ) : (
         <Journey onGoBack={handleGoBackToIntro} />
       )}
