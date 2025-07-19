@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Code } from 'lucide-react';
+import { Code } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -12,11 +12,8 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex items-center space-x-2 text-[var(--text-secondary)]">
-            <span>Made with</span>
-            <Heart className="h-4 w-4 text-red-400 fill-current" />
-            <span>and lots of</span>
-            <Code className="h-4 w-4 text-[var(--primary)]" />
-            <span>© 2024 All rights reserved.</span>
+            <span>No coffee was harmed in the making of this. New things brewing soon!</span>
+            {/* <Code className="h-4 w-4 text-[var(--primary)]" /> */}
           </div>
         </div>
       </div>

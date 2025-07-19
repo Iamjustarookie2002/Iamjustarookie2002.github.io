@@ -5,6 +5,7 @@ import Journey from './components/Journey';
 import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import KnowMeMore from './components/KnowMeMore';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { ArrowUp } from 'lucide-react';
@@ -13,6 +14,7 @@ function App() {
   const [currentSection, setCurrentSection] = useState<'intro' | 'journey'>('intro');
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [cameFromJourney, setCameFromJourney] = useState(false);
+  const [fading, setFading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,27 +25,38 @@ function App() {
   }, []);
 
   const handleJourneyClick = () => {
-    setCurrentSection('journey');
-    setCameFromJourney(false);
+    setFading(true);
+    setTimeout(() => {
+      setCurrentSection('journey');
+      setCameFromJourney(false);
+      setFading(false);
+    }, 500); // match CSS transition duration
   };
 
   const handleGoBackToIntro = () => {
-    setCurrentSection('intro');
-    setCameFromJourney(true);
+    setFading(true);
+    setTimeout(() => {
+      setCurrentSection('intro');
+      setCameFromJourney(true);
+      setFading(false);
+    }, 500);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* <div className="min-h-screen bg-gradient-to-r from-[#023E8A] via-gray-800 to-[#03045E]">*/}
-      <Header currentSection={currentSection === 'intro' ? 'anime' : 'journey'} onJourneyClick={handleJourneyClick} onGoBackToIntro={handleGoBackToIntro} />
-      {currentSection === 'intro' ? (
-        <Intro fromJourney={cameFromJourney} onJourneyClick={handleJourneyClick} />
-      ) : (
-        <Journey onGoBack={handleGoBackToIntro} />
-      )}
+      <Header currentSection={currentSection === 'intro' ? 'anime' : 'journey'} />
+      <div className="section-switcher">
+        <div className={`section-fade${currentSection === 'intro' && !fading ? '' : ' hide'}`}>
+          <Intro fromJourney={cameFromJourney} onJourneyClick={handleJourneyClick} />
+        </div>
+        <div className={`section-fade${currentSection === 'journey' && !fading ? '' : ' hide'}`}>
+          <Journey onGoBack={handleGoBackToIntro} />
+        </div>
+      </div>
       <About />
       <Projects />
       <Skills />
+      <KnowMeMore />
       <Contact />
       <Footer />
       {showScrollTop && (

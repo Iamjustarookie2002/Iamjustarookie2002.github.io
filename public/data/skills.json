@@ -1,0 +1,45 @@
+{
+  "description": "A comprehensive overview of the technologies and tools I work with",
+  "categories": [
+    {
+      "icon": "Code",
+      "title": "Programming Languages",
+      "skills": ["C", "C++", "Golang", "Python", "Java", "JavaScript", "HTML", "SQL", "Bash", "TypeScript", "CUDA"]
+    },
+    {
+      "icon": "Layers",
+      "title": "Frameworks & Libraries",
+      "skills": ["React.js", "React Native", "Node.js", "Express.js", "Gin", "Cobra", "Django", "TensorFlow", "PyTorch", "Pandas", "NumPy", "Matplotlib", "Socket.IO", "Streamlit", "Lex", "Yacc"]
+    },
+    {
+      "icon": "Terminal",
+      "title": "Tools & Platforms",
+      "skills": ["Git", "Postman", "Docker", "Kubernetes", "AWS", "Azure", "Visual Studio Code", "Jupyter Notebook", "Google Colab", "Wireshark", "Logisim", "FAISS", "Tesseract OCR", "Salesforce BLIP", "Mistral LLM"]
+    },
+    {
+      "icon": "Database",
+      "title": "Databases",
+      "skills": ["PostgreSQL", "MySQL", "MongoDB"]
+    },
+    {
+      "icon": "Cpu",
+      "title": "AI & ML Technologies",
+      "skills": ["Retrieval-Augmented Generation (RAG)", "OCR", "LLM Deployment", "Image Captioning", "BLEU Score Evaluation", "Machine Learning", "Data Science"]
+    },
+    {
+      "icon": "Zap",
+      "title": "Development & APIs",
+      "skills": ["REST APIs", "GRPC", "CLI Tools", "Full Stack Development", "Cache Management"]
+    },
+    {
+      "icon": "Smartphone",
+      "title": "Core Concepts",
+      "skills": ["Object-Oriented Programming", "Data Structures", "Algorithms", "Operating Systems", "Compilers", "Computer Networks", "Parallel Computing", "Information Security"]
+    },
+    {
+      "icon": "Globe",
+      "title": "Specialized Skills",
+      "skills": ["Custom Programming Languages", "Cache Management", "Full Stack Development"]
+    }
+  ]
+} 

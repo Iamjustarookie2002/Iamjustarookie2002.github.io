@@ -245,3 +245,55 @@ body {
 .global-hover-btn:hover {
   background: var(--hover-btn);
 }
+
+.site-title-font {
+  font-family: Arial, sans-serif !important;
+  letter-spacing: 0.02em;
+}
+
+.section-switcher {
+  position: relative;
+  min-height: 700px;
+}
+@media (max-width: 1024px) {
+  .section-switcher {
+    min-height: 900px;
+  }
+}
+@media (max-width: 600px) {
+  .section-switcher {
+    min-height: 1050px;
+  }
+}
+.section-fade {
+  opacity: 1;
+  transition: opacity 0.5s;
+  pointer-events: auto;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.section-fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Responsive profile image utility */
+.profile-img-container {
+  width: 320px;
+  height: 380px;
+}
+@media (max-width: 1024px) {
+  .profile-img-container {
+    width: 220px;
+    height: 260px;
+  }
+}
+@media (max-width: 600px) {
+  .profile-img-container {
+    width: 160px;
+    height: 180px;
+    margin-top: 2rem;
+  }
+}

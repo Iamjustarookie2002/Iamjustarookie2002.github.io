@@ -3,11 +3,9 @@ import { Menu, X, Code, Sun, Moon } from 'lucide-react';
 
 interface HeaderProps {
   currentSection: string;
-  onJourneyClick?: () => void;
-  onGoBackToIntro?: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBackToIntro }) => {
+const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -89,7 +87,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, onJourneyClick, onGoBac
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] capitalize ${
+                  className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
                     currentSection === item.id ? (item.id === 'journey' ? 'text-white' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
                   }`}
                 >

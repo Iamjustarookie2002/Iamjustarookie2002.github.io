@@ -1,0 +1,25 @@
+{
+  "description": "Let's connect — I'm always happy to hear from you.",
+  "contacts": [
+    {
+      "icon": "Mail",
+      "href": "mailto:rishikesh.kudikala2111@gmail.com",
+      "label": "Copy Email"
+    },
+    {
+      "icon": "Instagram",
+      "href": "https://www.instagram.com/iamjustarookie",
+      "label": "Instagram"
+    },
+    {
+      "icon": "Linkedin",
+      "href": "https://www.linkedin.com/in/rishikesh-kudikala",
+      "label": "LinkedIn"
+    },
+    {
+      "icon": "MapPin",
+      "href": "https://maps.google.com/?q=West+Lafayette,+Indiana,+USA",
+      "label": "Location"
+    }
+  ]
+} 
