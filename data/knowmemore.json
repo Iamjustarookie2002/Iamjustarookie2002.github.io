@@ -1,0 +1,38 @@
+{
+  "title": "Know Me More",
+  "description": "Discover more about my interests and recommendations",
+  "cards": [
+    {
+      "id": "spotify",
+      "title": "Spotify",
+      "description": "My current playlist vibes",
+      "icon": "spotify",
+      "link": "https://open.spotify.com/user/fawd1tlff1e4sfh0iisln685l",
+      "color": "blue"
+    },
+    {
+      "id": "anime",
+      "title": "Show Recommendations",
+      "description": "Must-watch shows",
+      "icon": "sword",
+      "link": "/anime",
+      "color": "blue"
+    },
+    {
+      "id": "hacks",
+      "title": "Small Daily Hacks",
+      "description": "Life improvement tips",
+      "icon": "flask",
+      "link": "#daily-hacks",
+      "color": "blue"
+    },
+    {
+      "id": "games",
+      "title": "Games",
+      "description": "My favorite video games",
+      "icon": "gamepad",
+      "link": "/games",
+      "color": "blue"
+    }
+  ]
+} 
