@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Projects</h2>
           <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-4"></div>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
             {projectsData.description}

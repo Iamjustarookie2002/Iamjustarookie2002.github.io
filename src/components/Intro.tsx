@@ -62,31 +62,33 @@ const Intro: React.FC<IntroProps> = ({ fromJourney, onJourneyClick }) => {
   if (!introData) return null;
 
   return (
-    <section id="anime" className="relative z-10 text-center w-full px-[5%] min-h-screen flex flex-col justify-center items-center intro-section-bg overflow-x-auto">
+    <section id="anime" className="relative z-10 text-center w-full px-[5%] min-h-screen flex flex-col justify-center items-center overflow-x-auto">
       {(showName || showWelcome) && (
-        <div className="inline-block relative fit-content-width">
-          {/* Name is always rendered for width calculation */}
-          <h1
-            className={`silver-black-gradient-text mb-4 animate-fade-in-up transition-opacity duration-500 agbalumo-font animated-name ${showName ? 'opacity-100' : 'opacity-0'}`}
-            style={{ pointerEvents: showName ? 'auto' : 'none' }}
-          >
-            {introData.name}
-          </h1>
-          {/* Welcome text absolutely overlays the name */}
-          <h1
-            className="silver-black-gradient-text mb-4 transition-opacity duration-500 animated-welcome"
-            style={{ opacity: showWelcome ? 1 : 0, pointerEvents: showWelcome ? 'auto' : 'none' }}
-          >
-            {introData.welcome}
-          </h1>
-          <div
-            className="intro-underline"
-            style={{ width: showUnderline ? '70%' : '0%' }}
-          ></div>
+        <div className="flex flex-col items-center justify-center w-full">
+          <div className="inline-block relative fit-content-width">
+            {/* Name is always rendered for width calculation */}
+            <h1
+              className={`silver-black-gradient-text mb-4 animate-fade-in-up transition-opacity duration-500 agbalumo-font animated-name ${showName ? 'opacity-100' : 'opacity-0'}`}
+              style={{ pointerEvents: showName ? 'auto' : 'none' }}
+            >
+              {introData.name}
+            </h1>
+            {/* Welcome text absolutely overlays the name */}
+            <h1
+              className="silver-black-gradient-text mb-4 transition-opacity duration-500 animated-welcome"
+              style={{ opacity: showWelcome ? 1 : 0, pointerEvents: showWelcome ? 'auto' : 'none' }}
+            >
+              {introData.welcome}
+            </h1>
+            <div
+              className="intro-underline"
+              style={{ width: showUnderline ? '70%' : '0%' }}
+            ></div>
+          </div>
         </div>
       )}
       {showStaticHero && (
-        <div className="w-full py-16 intro-section-transparent-bg">
+        <div className="w-full">
           <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12">
             {/* Left side - Text content */}
             <div className="flex-10 text-center lg:text-right max-w-2xl lg:ml-auto lg:mr-8">

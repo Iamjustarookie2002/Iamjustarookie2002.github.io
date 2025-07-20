@@ -37,7 +37,7 @@ const About: React.FC = () => {
   if (!aboutData) return null;
 
   return (
-    <section id="about" className="py-20 px-6 about-section-bg mt-5">
+    <section id="about" className="py-20 px-6">
       <div className="container mx-auto max-w-6xl flex flex-col gap-10">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">About Me</h2>
