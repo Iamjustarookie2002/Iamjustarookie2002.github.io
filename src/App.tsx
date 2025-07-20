@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Intro from './components/Intro';
 import Journey from './components/Journey';
@@ -9,7 +10,7 @@ import KnowMeMore from './components/KnowMeMore';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Games from './components/KMM Pages/Games';
-import Anime from './components/KMM Pages/Anime';
+import Series from './components/KMM Pages/Series';
 import { ArrowUp } from 'lucide-react';
 
 // Global state for scroll position
@@ -24,46 +25,6 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [cameFromJourney, setCameFromJourney] = useState(false);
   const [fading, setFading] = useState(false);
-  const [currentPage, setCurrentPage] = useState<'portfolio' | 'games' | 'anime'>('portfolio');
-
-  useEffect(() => {
-    // Check if we're on the games or anime page
-    if (window.location.pathname === '/games') {
-      setCurrentPage('games');
-    } else if (window.location.pathname === '/anime') {
-      setCurrentPage('anime');
-    } else {
-      setCurrentPage('portfolio');
-      // Scroll to KnowMeMore section when coming from games or anime
-      const cameFromGames = localStorage.getItem('cameFromGames');
-      const cameFromAnime = localStorage.getItem('cameFromAnime');
-      if (cameFromGames === 'true') {
-        setTimeout(() => {
-          const knowMeMoreSection = document.getElementById('know-me-more');
-          if (knowMeMoreSection) {
-            knowMeMoreSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-          // Clear the flag after scrolling
-          localStorage.removeItem('cameFromGames');
-        }, 1200);
-      } else if (cameFromAnime === 'true') {
-        setTimeout(() => {
-          const knowMeMoreSection = document.getElementById('know-me-more');
-          if (knowMeMoreSection) {
-            knowMeMoreSection.scrollIntoView({ 
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-          // Clear the flag after scrolling
-          localStorage.removeItem('cameFromAnime');
-        }, 1200);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,13 +32,10 @@ function App() {
       const shouldShow = scrollY > 200;
       setShowScrollTop(shouldShow);
     };
-    
-    // Initial check
     handleScroll();
-    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentPage]);
+  }, []);
 
   const handleJourneyClick = () => {
     setFading(true);
@@ -85,7 +43,7 @@ function App() {
       setCurrentSection('journey');
       setCameFromJourney(false);
       setFading(false);
-    }, 500); // match CSS transition duration
+    }, 500);
   };
 
   const handleGoBackToIntro = () => {
@@ -97,34 +55,15 @@ function App() {
     }, 500);
   };
 
-  // Render Games page
-  if (currentPage === 'games') {
-    return (
-      <div className="page-transition page-enter-active">
-        <Games />
-      </div>
-    );
-  }
-
-  // Render Anime page
-  if (currentPage === 'anime') {
-    return (
-      <div className="page-transition page-enter-active">
-        <Anime />
-      </div>
-    );
-  }
-
-  // Render Portfolio page
-  return (
+  const PortfolioPage = (
     <>
       <Header currentSection={currentSection === 'intro' ? 'anime' : 'journey'} />
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 page-transition page-enter-active">
         <div className="section-switcher">
-          <div className={`section-fade${currentSection === 'intro' && !fading ? '' : ' hide'}`}>
+          <div className={`section-fade${currentSection === 'intro' && !fading ? '' : ' hide'}`}> 
             <Intro fromJourney={cameFromJourney} onJourneyClick={handleJourneyClick} />
           </div>
-          <div className={`section-fade${currentSection === 'journey' && !fading ? '' : ' hide'}`}>
+          <div className={`section-fade${currentSection === 'journey' && !fading ? '' : ' hide'}`}> 
             <Journey onGoBack={handleGoBackToIntro} />
           </div>
         </div>
@@ -135,9 +74,6 @@ function App() {
         <Contact />
         <Footer />
       </div>
-      
-
-      
       {/* Scroll to top button - outside main content */}
       <button
         onClick={() => {
@@ -155,14 +91,24 @@ function App() {
           bottom: '1rem', 
           right: '1rem', 
           zIndex: 9999,
-          opacity: showScrollTop && currentPage === 'portfolio' ? 1 : 0,
-          pointerEvents: showScrollTop && currentPage === 'portfolio' ? 'auto' : 'none',
-          transform: showScrollTop && currentPage === 'portfolio' ? 'translateY(0)' : 'translateY(20px)'
+          opacity: showScrollTop ? 1 : 0,
+          pointerEvents: showScrollTop ? 'auto' : 'none',
+          transform: showScrollTop ? 'translateY(0)' : 'translateY(20px)'
         }}
       >
         <ArrowUp className="h-6 w-6" />
       </button>
     </>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={PortfolioPage} />
+        <Route path="/games" element={<Games />} />
+        <Route path="/series" element={<Series />} />
+      </Routes>
+    </Router>
   );
 }
 

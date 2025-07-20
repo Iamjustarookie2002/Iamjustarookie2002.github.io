@@ -3,9 +3,6 @@ import { ArrowLeft } from 'lucide-react';
 
 const Games: React.FC = () => {
   const handleBackToPortfolio = () => {
-    // Set flag in localStorage to persist across reload
-    localStorage.setItem('cameFromGames', 'true');
-    // Navigate back to portfolio
     window.history.pushState({}, '', '/');
     window.location.reload();
   };

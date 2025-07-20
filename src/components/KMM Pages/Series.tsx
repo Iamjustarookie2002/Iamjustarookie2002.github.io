@@ -1,11 +1,8 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 
-const Anime: React.FC = () => {
+const Series: React.FC = () => {
   const handleBackToPortfolio = () => {
-    // Set flag to indicate we're coming from anime page
-    localStorage.setItem('cameFromAnime', 'true');
-    // Navigate back to portfolio
     window.history.pushState({}, '', '/');
     window.location.reload();
   };
@@ -30,8 +27,8 @@ const Anime: React.FC = () => {
             Work in Progress
           </h1>
           <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            The Anime Recommendations section is currently under development. 
-            Check back soon for my favorite anime shows and must-watch recommendations!
+            The Series Recommendations section is currently under development. 
+            Check back soon for my favorite series and must-watch recommendations!
           </p>
         </div>
       </main>
@@ -39,4 +36,4 @@ const Anime: React.FC = () => {
   );
 };
 
-export default Anime; 
+export default Series; 

@@ -5,23 +5,23 @@
     {
       "id": "spotify",
       "title": "Spotify",
-      "description": "My current playlist vibes",
+      "description": "My current savior",
       "icon": "spotify",
       "link": "https://open.spotify.com/user/fawd1tlff1e4sfh0iisln685l",
       "color": "blue"
     },
     {
       "id": "anime",
-      "title": "Show Recommendations",
+      "title": "Series Recommendations",
       "description": "Must-watch shows",
       "icon": "sword",
-      "link": "/anime",
+      "link": "/series",
       "color": "blue"
     },
     {
       "id": "hacks",
-      "title": "Small Daily Hacks",
-      "description": "Life improvement tips",
+      "title": "Some Daily Hacks",
+      "description": "Some (maybe) useful",
       "icon": "flask",
       "link": "#daily-hacks",
       "color": "blue"
@@ -29,7 +29,7 @@
     {
       "id": "games",
       "title": "Games",
-      "description": "My favorite video games",
+      "description": "Games I grinded on!",
       "icon": "gamepad",
       "link": "/games",
       "color": "blue"

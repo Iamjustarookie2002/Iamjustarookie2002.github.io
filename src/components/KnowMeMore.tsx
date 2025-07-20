@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 interface KnowMeMoreData {
   title: string;
@@ -60,42 +61,48 @@ const KnowMeMore: React.FC = () => {
         
         {/* Cards Container */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
-          {knowMeMoreData.cards.map((card) => (
-            <a
-              key={card.id}
-              href={card.link}
-              target={card.link.startsWith('http') ? '_blank' : '_self'}
-              rel={card.link.startsWith('http') ? 'noopener noreferrer' : ''}
-              onClick={(e) => {
-                if (card.link === '/games') {
-                  e.preventDefault();
-                  // Save current scroll position
-                  window.portfolioScrollPosition = window.scrollY;
-                  // Smooth transition to games page
-                  window.history.pushState({}, '', '/games');
-                  window.location.reload();
-                } else if (card.link === '/anime') {
-                  e.preventDefault();
-                  // Save current scroll position
-                  window.portfolioScrollPosition = window.scrollY;
-                  // Smooth transition to anime page
-                  window.history.pushState({}, '', '/anime');
-                  window.location.reload();
-                }
-              }}
-              className="w-fit rounded-lg p-4 pr-6 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
-            >
-              <div className="flex items-start gap-5">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 pt-1">
-                  {renderIcon(card.icon)}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-[var(--text-main)] mb-1">{card.title}</h3>
-                  <p className="text-sm text-[var(--text-secondary)]">{card.description}</p>
-                </div>
-              </div>
-            </a>
-          ))}
+          {knowMeMoreData.cards.map((card) => {
+            const isInternal = card.link === '/games' || card.link === '/series';
+            if (isInternal) {
+              return (
+                <Link
+                  key={card.id}
+                  to={card.link}
+                  className="w-fit rounded-lg p-4 pr-6 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  <div className="flex items-start gap-5">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 pt-1">
+                      {renderIcon(card.icon)}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-[var(--text-main)] mb-1">{card.title}</h3>
+                      <p className="text-sm text-[var(--text-secondary)]">{card.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            } else {
+              return (
+                <a
+                  key={card.id}
+                  href={card.link}
+                  target={card.link.startsWith('http') ? '_blank' : '_self'}
+                  rel={card.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                  className="w-fit rounded-lg p-4 pr-6 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  <div className="flex items-start gap-5">
+                    <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 pt-1">
+                      {renderIcon(card.icon)}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-[var(--text-main)] mb-1">{card.title}</h3>
+                      <p className="text-sm text-[var(--text-secondary)]">{card.description}</p>
+                    </div>
+                  </div>
+                </a>
+              );
+            }
+          })}
         </div>
       </div>
     </section>

@@ -29,68 +29,60 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-6">Projects</h2>
-          <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-4"></div>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-4">Projects</h2>
+          <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-2"></div>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">
             {projectsData.description}
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {projectsData.projects.map((project, index) => (
             <div
               key={index}
-              className="group card-blur rounded-2xl overflow-hidden border global-hover-card-border transition-all"
+              className="group rounded-lg border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 p-4 flex flex-col justify-between min-h-[220px]"
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 projects-gradient-overlay"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-[var(--text-main)] mb-3 group-hover:text-[var(--primary)] transition-colors">
+              <div>
+                <h3 className="text-lg font-bold text-[var(--text-main)] mb-2 group-hover:text-[var(--primary)] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] text-sm mb-4 leading-relaxed">
+                <p className="text-[var(--text-secondary)] text-sm mb-3 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-[var(--primary)] text-xs rounded-full border border-[var(--primary)] bg-[var(--bg-card)]/40"
+                      className="px-2 py-0.5 text-[var(--primary)] text-xs rounded border border-[var(--primary)] bg-[var(--bg-card)]/40"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-3">
-                  {project.link && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 px-4 py-2 rounded-lg global-hover-btn text-[var(--text-main)] text-sm transition-colors"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      <span>Live Demo</span>
-                    </a>
-                  )}
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center space-x-2 px-4 py-2 rounded-lg global-hover-btn text-[var(--text-main)] text-sm transition-colors border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--bg-main)]"
-                    >
-                      <Github className="h-4 w-4 text-[var(--primary)]" />
-                      <span>Code</span>
-                    </a>
-                  )}
-                </div>
+              </div>
+              <div className="flex space-x-2 mt-2">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 px-3 py-1 rounded global-hover-btn text-[var(--text-main)] text-xs transition-colors border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--bg-main)]"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    <span>Live</span>
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 px-3 py-1 rounded global-hover-btn text-[var(--text-main)] text-xs transition-colors border border-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--bg-main)]"
+                  >
+                    <Github className="h-4 w-4 text-[var(--primary)]" />
+                    <span>Code</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}
