@@ -21,27 +21,6 @@
       "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
       "github": "https://github.com",
       "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      "title": "Backend CLI Tools",
-      "description": "Developed CLI tools using Cobra framework during my internship at NimbleEdge. Reduced latency by 12% by decoupling Azure and AWS services. Learned that production code is like cooking - everyone has an opinion!",
-      "technologies": ["Golang", "Gin Framework", "Cobra", "Docker", "Kubernetes", "GRPC"],
-      "github": "https://github.com",
-      "image": "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      "title": "Optimization Techniques Teaching",
-      "description": "Served as Undergraduate Teaching Assistant for Optimization Techniques at IIT Roorkee. Mentored 20 students and survived their endless questions. Because teaching is the best way to learn!",
-      "technologies": ["Python", "Mathematical Optimization", "Teaching", "Mentoring"],
-      "github": "https://github.com",
-      "image": "https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      "title": "Student Mentorship Program",
-      "description": "Led a mentorship program for 20 students, helping them navigate their academic journey. Became the go-to person for debugging life problems (and code problems).",
-      "technologies": ["Leadership", "Communication", "Problem Solving", "Coffee"],
-      "github": "https://github.com",
-      "image": "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ]
 } 

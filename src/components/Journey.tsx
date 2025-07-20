@@ -135,11 +135,13 @@ const Journey: React.FC<JourneyProps> = ({ onJourneyNodeClick, onGoBack }) => {
                     <button
                       className="bg-white rounded-full shadow-lg p-[0.1rem] border border-white text-black flex items-center gap-3 group focus:outline-none relative"
                       onClick={() => {
-                        const el = document.getElementById(item.id || item.title);
+                        if (item.year === '2002') return;
+                        const targetId = item.type === 'education' ? 'education-card' : 'experience-card';
+                        const el = document.getElementById(targetId);
                         if (el) {
                           el.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
-                        if (onJourneyNodeClick) onJourneyNodeClick(item.id || item.title);
+                        if (onJourneyNodeClick) onJourneyNodeClick(targetId);
                       }}
                       onMouseEnter={e => {
                         const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
