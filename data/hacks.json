@@ -1,0 +1,39 @@
+{
+  "title": "Daily Hacks",
+  "description": "Some useful tips and tricks I've collected. Don't take them too seriously. Try them if you have time. It's just fun!",
+  "hacks": [
+    {
+      "name": "Browser Extensions",
+      "links": [
+        { "label": "Docs Dark Mode", "url": "https://chromewebstore.google.com/detail/dark-mode-google-docs/iabnclnclchijjckhdljmocghgmgnnii" }
+      ]
+    },
+    {
+      "name": "Japanese",
+      "links": [
+        { "label": "How to use chop sticks?", "url": "https://www.instagram.com/reel/DIziiFGthzx/?igsh=MTFtaTFmMHp1NHBkNw==" }
+      ]
+    },
+    {
+      "name": "Knots",
+      "links": []
+    },
+    {
+      "name": "Clothes",
+      "links": [
+        { "label": "Shoe lace-1", "url": "https://www.instagram.com/reel/DJrCFo2ypqy/?igsh=MTJ6cWludTJldXVudQ==" },
+        { "label": "Shoe lace-2", "url": "https://www.instagram.com/reel/DFmGD1oicgn/?igsh=ZG40emRhZXVtMXY2" },
+        { "label": "Tie", "url": "https://www.instagram.com/reel/DJ-vWDXPWn-/?igsh=MWg2aDFzdTY0Y20zdQ==" },
+        { "label": "Easy Folding", "url": "https://www.instagram.com/reel/DFfjgcUzqZM/?igsh=MXBqa3YyZTltcGxvcQ%3D%3D" },
+        { "label": "Perfect folding", "url": "https://www.instagram.com/reel/DJklkWaxWR-/?igsh=cWl4bmg0NGk3dTg2" },
+        { "label": "Compact folding", "url": "https://www.instagram.com/reel/DH-P-ugp54K/?igsh=MTIzNzUzN2toZG5yaA%3D%3D" }
+      ]
+    },
+    {
+      "name": "Food",
+      "links": [
+        { "label": "Cutting fruits", "url": "https://www.instagram.com/reel/DGvEwJxS_s6/?igsh=dm11MnhqdmFsbmVt" }
+      ]
+    }
+  ]
+} 

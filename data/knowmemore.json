@@ -23,13 +23,13 @@
       "title": "Some Daily Hacks",
       "description": "Some (maybe) useful",
       "icon": "flask",
-      "link": "#daily-hacks",
+      "link": "/hacks",
       "color": "blue"
     },
     {
       "id": "games",
       "title": "Games",
-      "description": "Games I grinded on!",
+      "description": "Games I grinded!",
       "icon": "gamepad",
       "link": "/games",
       "color": "blue"
