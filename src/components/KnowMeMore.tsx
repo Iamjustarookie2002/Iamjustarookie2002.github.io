@@ -62,7 +62,7 @@ const KnowMeMore: React.FC = () => {
         {/* Cards Container */}
         <div className="flex flex-wrap justify-center gap-4 mt-12">
           {knowMeMoreData.cards.map((card) => {
-            const isInternal = card.link === '/games' || card.link === '/series';
+            const isInternal = card.link === '/games' || card.link === '/series' || card.link === '/hacks';
             if (isInternal) {
               return (
                 <Link

@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Games from './components/KMM Pages/Games';
 import Series from './components/KMM Pages/Series';
+import Hacks from './components/KMM Pages/Hacks';
 import { ArrowUp } from 'lucide-react';
 
 // Global state for scroll position
@@ -107,6 +108,7 @@ function App() {
         <Route path="/" element={PortfolioPage} />
         <Route path="/games" element={<Games />} />
         <Route path="/series" element={<Series />} />
+        <Route path="/hacks" element={<Hacks />} />
       </Routes>
     </Router>
   );

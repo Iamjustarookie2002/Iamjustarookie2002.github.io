@@ -23,16 +23,24 @@ interface AboutData {
   summary: string;
   education: Education[];
   experience: Experience[];
+  quotes: string[];
 }
 
 const About: React.FC = () => {
-  const [aboutData, setAboutData] = useState<AboutData | null>(null);
-
+  const [aboutData, setAboutData] = useState<AboutData & { quotes?: string[] } | null>(null);
+  const [quoteIndex, setQuoteIndex] = useState(0);
   useEffect(() => {
     fetch('/data/about.json')
       .then((res) => res.json())
       .then((data) => setAboutData(data));
   }, []);
+  useEffect(() => {
+    if (!aboutData?.quotes || aboutData.quotes.length === 0) return;
+    const interval = setInterval(() => {
+      setQuoteIndex((prev) => (prev + 1) % aboutData.quotes.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [aboutData]);
 
   if (!aboutData) return null;
 
@@ -48,6 +56,11 @@ const About: React.FC = () => {
         <div className="rounded-2xl p-8 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-lg mb-6 text-center">
           <h3 className="text-2xl font-bold text-[var(--primary)] mb-4">In short...</h3>
           <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">{aboutData.summary}</p>
+          {aboutData.quotes && aboutData.quotes.length > 0 && (
+            <div className="mt-4 text-[var(--primary)] italic text-base min-h-[32px] transition-opacity duration-500">
+              {aboutData.quotes[quoteIndex]}
+            </div>
+          )}
         </div>
 
         {/* Education Section */}

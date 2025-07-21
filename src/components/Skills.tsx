@@ -50,11 +50,11 @@ const Skills: React.FC = () => {
             return (
               <div
                 key={index}
-                className="card-blur rounded-2xl p-6 border global-hover-card-border transition-all"
+                className="card-blur rounded-2xl p-6 border transition-all"
               >
                 <div className="flex items-center mb-4">
                   {Icon && (
-                    <div className="p-3 rounded-lg text-[var(--primary)] border border-[var(--primary)] mr-4 global-hover-bg">
+                    <div className="p-3 rounded-lg text-[var(--primary)] border border-[var(--primary)] mr-4">
                       <Icon className="h-8 w-8" />
                     </div>
                   )}
@@ -64,7 +64,7 @@ const Skills: React.FC = () => {
                   {category.skills.map((skill, skillIndex) => (
                     <span
                       key={skillIndex}
-                      className="px-3 py-1 rounded-full border border-[var(--primary)] text-[var(--primary)] text-sm global-hover-bg global-hover-text global-hover-border transition-all"
+                      className="px-3 py-1 rounded-full border border-[var(--primary)] text-[var(--primary)] text-sm transition-all"
                     >
                       {skill}
                     </span>
