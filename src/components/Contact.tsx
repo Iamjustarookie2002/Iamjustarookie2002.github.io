@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
                 <button
                   key={idx}
                   onClick={() => handleCopyEmail(item.href.replace('mailto:', ''))}
-                  className="p-3 card-blur rounded-lg global-hover-bg transition-all"
+                  className="p-3 contact-icon rounded-lg transition-all hover:scale-110"
                   title={item.label}
                   type="button"
                 >
@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
                 href={item.href}
                 target={item.icon === 'MapPin' || item.icon === 'Linkedin' || item.icon === 'Instagram' ? '_blank' : undefined}
                 rel={item.icon === 'MapPin' || item.icon === 'Linkedin' || item.icon === 'Instagram' ? 'noopener noreferrer' : undefined}
-                className="p-3 card-blur rounded-lg global-hover-bg transition-all"
+                className="p-3 contact-icon rounded-lg transition-all hover:scale-110"
                 title={item.label}
               >
                 <LucideIcon className="h-6 w-6 text-[var(--primary)]" />
@@ -79,24 +79,7 @@ const Contact: React.FC = () => {
           })}
         </div>
         {copied && (
-          <span
-            style={{
-              position: 'fixed',
-              left: '50%',
-              bottom: '40px',
-              transform: 'translateX(-50%)',
-              background: '#222',
-              color: '#7cb6fe',
-              padding: '12px 24px',
-              borderRadius: '8px',
-              fontWeight: 600,
-              zIndex: 9999,
-              boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
-              opacity: 0.95,
-            }}
-          >
-            Email copied to clipboard!
-          </span>
+          <span className="toast-notice">Email copied to clipboard!</span>
         )}
       </div>
     </section>

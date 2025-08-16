@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects" className="py-20 px-6">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-main)] mb-4">Projects</h2>
           <div className="w-24 h-1 bg-[var(--primary)] mx-auto mb-2"></div>
@@ -46,9 +46,11 @@ const Projects: React.FC = () => {
                 <h3 className="text-lg font-bold text-[var(--text-main)] mb-2 group-hover:text-[var(--primary)] transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] text-sm mb-3 leading-relaxed">
-                  {project.description}
-                </p>
+                <ul className="list-disc pl-5 text-[var(--text-secondary)] text-sm mb-3 leading-relaxed">
+                  {project.description.split('. ').filter(sentence => sentence.trim()).map((sentence, i) => (
+                    <li key={i}>{sentence.trim()}</li>
+                  ))}
+                </ul>
                 <div className="flex flex-wrap gap-2 mb-3">
                   {project.technologies.map((tech, techIndex) => (
                     <span

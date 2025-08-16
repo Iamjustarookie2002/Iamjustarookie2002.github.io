@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Games from './components/KMM Pages/Games';
 import Series from './components/KMM Pages/Series';
 import Hacks from './components/KMM Pages/Hacks';
+import Vault from './components/KMM Pages/Vault';
 import { ArrowUp } from 'lucide-react';
 
 // Global state for scroll position
@@ -59,7 +60,7 @@ function App() {
   const PortfolioPage = (
     <>
       <Header currentSection={currentSection === 'intro' ? 'anime' : 'journey'} />
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 page-transition page-enter-active">
+      <div className="min-h-screen page-bg page-transition page-enter-active">
         <div className="section-switcher">
           <div className={`section-fade${currentSection === 'intro' && !fading ? '' : ' hide'}`}> 
             <Intro fromJourney={cameFromJourney} onJourneyClick={handleJourneyClick} />
@@ -85,7 +86,7 @@ function App() {
             });
           }, 300);
         }}
-        className="p-3 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-all duration-300"
+        className="p-3 rounded-full bg-[var(--primary)] text-white shadow-lg hover:opacity-90 transition-all duration-300"
         aria-label="Scroll to top"
         style={{ 
           position: 'fixed', 
@@ -105,13 +106,41 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={PortfolioPage} />
-        <Route path="/games" element={<Games />} />
-        <Route path="/series" element={<Series />} />
-        <Route path="/hacks" element={<Hacks />} />
+        <Route path="/" element={<ScrollRestorerWrapper>{PortfolioPage}</ScrollRestorerWrapper>} />
+        <Route path="/games" element={<PreserveScrollOnExit><Games /></PreserveScrollOnExit>} />
+        <Route path="/series" element={<PreserveScrollOnExit><Series /></PreserveScrollOnExit>} />
+        <Route path="/hacks" element={<PreserveScrollOnExit><Hacks /></PreserveScrollOnExit>} />
+        <Route path="/vault" element={<PreserveScrollOnExit><Vault /></PreserveScrollOnExit>} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
+
+function ScrollRestorerWrapper({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    try {
+      const saved = sessionStorage.getItem('portfolioScrollY');
+      if (saved) {
+        const y = parseInt(saved, 10);
+        if (!Number.isNaN(y)) {
+          window.scrollTo({ top: y });
+        }
+        sessionStorage.removeItem('portfolioScrollY');
+      }
+    } catch (err) { void err; }
+  }, []);
+  return <>{children}</>;
+}
+
+function PreserveScrollOnExit({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    return () => {
+      try {
+        sessionStorage.setItem('portfolioScrollY', String(window.scrollY));
+      } catch (err) { void err; }
+    };
+  }, []);
+  return <>{children}</>;
+}

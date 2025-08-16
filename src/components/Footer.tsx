@@ -1,5 +1,6 @@
 import React from 'react';
 import { Code } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -7,7 +8,9 @@ const Footer: React.FC = () => {
       <div className="container mx-auto max-w-6xl pr-8">
         <div className="flex flex-col md:flex-row items-center">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <Code className="h-6 w-6 text-[var(--primary)]" />
+            <Link to="/vault" className="group" aria-label="Open Vault" title="Open Vault">
+              <Code className="h-6 w-6 text-[var(--primary)] group-hover:scale-110 transition-transform" />
+            </Link>
             <span className="text-[var(--text-main)] font-semibold">Rishikesh Kudikala</span>
           </div>
           

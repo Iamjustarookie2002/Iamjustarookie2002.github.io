@@ -1,0 +1,14 @@
+{
+  "description": "Curated links and private notes I keep for quick access.",
+  "items": [
+    {
+      "id": "PSD",
+      "title": "Problem Solving Documentation",
+      "description": "Notes for Leetcode, striversheet problems, etc",
+      "link": "https://docs.google.com/document/d/1VBJpHu_ZfC876_1fuEGDYboWuynhZdHTPZLbTBT7Qdk/edit?usp=sharing",
+      "badge": "Notes"
+    }
+  ]
+}
+
+

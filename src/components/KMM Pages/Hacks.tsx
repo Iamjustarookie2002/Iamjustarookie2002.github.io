@@ -24,6 +24,16 @@ const Hacks: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Apply persisted theme on standalone page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.remove('theme-dark');
+      document.body.classList.add('theme-light');
+    } else {
+      document.body.classList.remove('theme-light');
+      document.body.classList.add('theme-dark');
+    }
+
     fetch('/data/hacks.json')
       .then((res) => res.json())
       .then((data) => setHacksData(data))
@@ -38,7 +48,7 @@ const Hacks: React.FC = () => {
   if (!hacksData) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col">
+    <div className="min-h-screen page-bg flex flex-col">
       {/* Header with Back Button */}
       <header className="p-6">
         <button
@@ -81,7 +91,7 @@ const Hacks: React.FC = () => {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[var(--primary)] hover:underline hover:text-blue-400 transition-colors"
+                        className="flex items-center gap-1 text-[var(--primary)] hover:underline hover:text-[var(--primary)] transition-colors"
                       >
                         <span>{link.label}</span>
                         <ExternalLink className="h-4 w-4" />

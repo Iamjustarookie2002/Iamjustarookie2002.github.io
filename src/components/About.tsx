@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GraduationCap, Briefcase, Code } from 'lucide-react';
+import { School, Briefcase, Code, GraduationCap } from 'lucide-react';
 
 interface Education {
   degree: string;
@@ -20,14 +20,20 @@ interface Experience {
 }
 
 interface AboutData {
-  summary: string;
+  guide: string;
+  guide2: string;
+  entertainment: string;
+  art: string;
+  music: string;
+  travel: string;
+  other: string;
   education: Education[];
   experience: Experience[];
   quotes: string[];
 }
 
 const About: React.FC = () => {
-  const [aboutData, setAboutData] = useState<AboutData & { quotes?: string[] } | null>(null);
+  const [aboutData, setAboutData] = useState<AboutData | null>(null);
   const [quoteIndex, setQuoteIndex] = useState(0);
   useEffect(() => {
     fetch('/data/about.json')
@@ -53,12 +59,34 @@ const About: React.FC = () => {
         </div>
 
         {/* In short card */}
-        <div className="rounded-2xl p-8 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-lg mb-6 text-center">
-          <h3 className="text-2xl font-bold text-[var(--primary)] mb-4">In short...</h3>
-          <p className="text-[var(--text-secondary)] text-lg max-w-2xl mx-auto">{aboutData.summary}</p>
+        <div className="rounded-2xl p-8 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-lg mb-6">
+          <h3 className="text-2xl font-bold text-[var(--primary)] mb-6 text-center">In short...</h3>
+          
+          {/* Personal attributes as text lines */}
+          <div className="mb-6 text-center">
+            <p className="text-[var(--text-secondary)] text-lg max-w-5xl mx-auto">
+              {aboutData.entertainment} {aboutData.art} {aboutData.music} {aboutData.travel} {aboutData.other}
+            </p>
+          </div>
+
+          {/* Guide */}
+          <div className="mb-4 text-center">
+            <p className="text-[var(--text-secondary)] text-lg max-w-5xl mx-auto">{aboutData.guide}</p>
+          </div>
+
+          {/* Guide 2 */}
+          {aboutData.guide2 && (
+            <div className="mb-16 text-center">
+              <p className="text-[var(--text-secondary)] text-lg max-w-5xl mx-auto">{aboutData.guide2}</p>
+            </div>
+          )}
+
+          {/* Quotes */}
           {aboutData.quotes && aboutData.quotes.length > 0 && (
-            <div className="mt-4 text-[var(--primary)] italic text-base min-h-[32px] transition-opacity duration-500">
-              {aboutData.quotes[quoteIndex]}
+            <div className="text-center">
+              <div className="text-[var(--primary)] italic text-base min-h-[32px] transition-opacity duration-500">
+                {aboutData.quotes[quoteIndex]}
+              </div>
             </div>
           )}
         </div>
@@ -73,12 +101,15 @@ const About: React.FC = () => {
             {aboutData.education.map((edu, idx) => (
               <div key={idx} className="bg-[var(--bg-card)]/40 rounded-xl p-6 border border-[var(--border-main)]/50">
                 <div className="flex items-center mb-3">
-                  <GraduationCap className="h-5 w-5 text-[var(--primary)] mr-2" />
-                  <h4 className="text-lg font-semibold text-[var(--text-main)]">{edu.degree}</h4>
+                  <School className="h-6 w-6 text-[var(--primary)] mr-3" />
+                  <h4 className="text-xl font-semibold text-[var(--text-main)]">{edu.degree}</h4>
                 </div>
-                <div className="text-[var(--text-secondary)] text-sm mb-2">{edu.school}</div>
-                <div className="text-xs text-[var(--text-secondary)]/60 mb-2">{edu.location} • {edu.duration}</div>
-                <ul className="list-disc pl-5 text-[var(--text-secondary)] text-xs space-y-1">
+                <div className="text-[var(--text-secondary)] text-base mb-2">{edu.school}</div>
+                <div className="flex justify-between items-center text-sm text-[var(--text-secondary)]/60 mb-3">
+                  <div>{edu.location}</div>
+                  <div>{edu.duration}</div>
+                </div>
+                <ul className="list-disc pl-5 text-[var(--text-secondary)] text-sm space-y-1">
                   {edu.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}
@@ -98,26 +129,31 @@ const About: React.FC = () => {
             {aboutData.experience.map((exp, idx) => (
               <div key={idx} className="bg-[var(--bg-card)]/40 rounded-xl p-6 border border-[var(--border-main)]/50">
                 <div className="flex items-center mb-3">
-                  <Code className="h-5 w-5 text-[var(--primary)] mr-2" />
-                  <h4 className="text-lg font-semibold text-[var(--text-main)]">{exp.title}</h4>
+                  <Code className="h-6 w-6 text-[var(--primary)] mr-3" />
+                  <h4 className="text-xl font-semibold text-[var(--text-main)]">{exp.title}</h4>
                 </div>
-                <div className="text-[var(--text-secondary)] text-sm mb-2">{exp.company}</div>
-                <div className="text-xs text-[var(--text-secondary)]/60 mb-2">{exp.location} • {exp.duration}</div>
-                <p className="text-[var(--text-secondary)] text-xs mb-3">{exp.description}</p>
+                <div className="text-[var(--text-secondary)] text-base mb-2">{exp.company}</div>
+                <div className="flex justify-between items-center text-sm text-[var(--text-secondary)]/60 mb-3">
+                  <div>{exp.location}</div>
+                  <div>{exp.duration}</div>
+                </div>
+                <ul className="list-disc pl-5 text-[var(--text-secondary)] text-sm space-y-1 mb-4">
+                  {exp.description.split('. ').filter(sentence => sentence.trim()).map((sentence, i) => (
+                    <li key={i}>{sentence.trim()}</li>
+                  ))}
+                </ul>
                 {exp.technologies.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {exp.technologies.map((tech, i) => (
-                      <span key={i} className="px-2 py-1 rounded bg-[var(--bg-card)]/40 text-[var(--primary)] text-xs border border-[var(--primary)]">{tech}</span>
+                      <span key={i} className="px-3 py-1 rounded bg-[var(--bg-card)]/40 text-[var(--primary)] text-sm border border-[var(--primary)]">{tech}</span>
                     ))}
                   </div>
                 )}
-                {exp.details.length > 0 && (
-                  <ul className="list-disc pl-5 text-[var(--text-secondary)] text-xs space-y-1">
-                    {exp.details.map((detail, i) => (
-                      <li key={i}>{detail}</li>
-                    ))}
-                  </ul>
-                )}
+                <ul className="list-disc pl-5 text-[var(--text-secondary)] text-sm space-y-1">
+                  {exp.details.map((detail, i) => (
+                    <li key={i}>{detail}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

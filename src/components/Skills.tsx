@@ -50,7 +50,7 @@ const Skills: React.FC = () => {
             return (
               <div
                 key={index}
-                className="card-blur rounded-2xl p-6 border transition-all"
+                className="skills-card-bg rounded-2xl p-6 border transition-all"
               >
                 <div className="flex items-center mb-4">
                   {Icon && (

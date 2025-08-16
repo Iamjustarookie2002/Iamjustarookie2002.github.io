@@ -68,6 +68,11 @@ const KnowMeMore: React.FC = () => {
                 <Link
                   key={card.id}
                   to={card.link}
+                  onClick={() => {
+                    try {
+                      sessionStorage.setItem('portfolioScrollY', String(window.scrollY));
+                    } catch (err) { void err; }
+                  }}
                   className="w-fit rounded-lg p-4 pr-6 border border-[var(--primary)] bg-[var(--bg-card)]/60 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105"
                 >
                   <div className="flex items-start gap-5">

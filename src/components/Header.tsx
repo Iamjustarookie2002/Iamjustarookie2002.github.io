@@ -10,9 +10,21 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Ensure a theme class is always present on mount
-    if (!document.body.classList.contains('theme-dark') && !document.body.classList.contains('theme-light')) {
+    // Apply persisted theme if available, else ensure a default
+    const savedTheme = (localStorage.getItem('theme') as 'dark' | 'light' | null);
+    if (savedTheme === 'light') {
+      document.body.classList.remove('theme-dark');
+      document.body.classList.add('theme-light');
+      setTheme('light');
+    } else if (savedTheme === 'dark') {
+      document.body.classList.remove('theme-light');
       document.body.classList.add('theme-dark');
+      setTheme('dark');
+    } else {
+      if (!document.body.classList.contains('theme-dark') && !document.body.classList.contains('theme-light')) {
+        document.body.classList.add('theme-dark');
+        localStorage.setItem('theme', 'dark');
+      }
     }
   }, []);
 
@@ -34,10 +46,12 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
       document.body.classList.remove('theme-dark');
       document.body.classList.add('theme-light');
       setTheme('light');
+      localStorage.setItem('theme', 'light');
     } else {
       document.body.classList.remove('theme-light');
       document.body.classList.add('theme-dark');
       setTheme('dark');
+      localStorage.setItem('theme', 'dark');
     }
   };
 
@@ -106,7 +120,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors duration-200 hover:text-[var(--hover-text)] ${
-                    currentSection === item.id ? (item.id === 'journey' ? 'text-white' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
+                    currentSection === item.id ? (item.id === 'journey' ? 'text-[var(--text-main)]' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}
@@ -143,7 +157,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection }) => {
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
                   className={`text-left text-base font-medium transition-colors duration-200 hover:text-[var(--hover-text)] capitalize py-2 px-4 rounded-lg hover:bg-[var(--hover-bg)]/10 ${
-                    currentSection === item.id ? (item.id === 'journey' ? 'text-white' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
+                    currentSection === item.id ? (item.id === 'journey' ? 'text-[var(--text-main)]' : 'text-[var(--primary)]') : 'text-[var(--text-secondary)]'
                   }`}
                 >
                   {item.label}

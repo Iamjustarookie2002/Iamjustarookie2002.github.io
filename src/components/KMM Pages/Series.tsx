@@ -1,14 +1,38 @@
-import React from 'react';
-import { ArrowLeft } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Series: React.FC = () => {
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.body.classList.remove('theme-dark');
+      document.body.classList.add('theme-light');
+    } else {
+      document.body.classList.remove('theme-light');
+      document.body.classList.add('theme-dark');
+    }
+  }, []);
+
+  const navigate = useNavigate();
   const handleBackToPortfolio = () => {
-    window.history.pushState({}, '', '/');
-    window.location.reload();
+    navigate('/');
   };
+  const [seriesData, setSeriesData] = useState<{ title: string; description?: string; items: Array<{ id: string; title: string; link?: string; tag?: string }> } | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/data/series.json')
+      .then((res) => res.json())
+      .then((data) => setSeriesData(data))
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) return null;
+  if (!seriesData) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col">
+    <div className="min-h-screen page-bg flex flex-col">
       {/* Header with Back Button */}
       <header className="p-6">
         <button
@@ -21,15 +45,48 @@ const Series: React.FC = () => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center px-6">
-        <div className="text-center">
-          <h1 className="text-6xl md:text-8xl font-bold text-[var(--text-main)] mb-8">
-            Work in Progress
-          </h1>
-          <p className="text-xl md:text-2xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            The Series Recommendations section is currently under development. 
-            Check back soon for my favorite series and must-watch recommendations!
-          </p>
+      <main className="flex-1 px-6 pb-8">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12">
+            <h1 className="text-5xl md:text-7xl font-bold text-[var(--text-main)] mb-4">{seriesData.title}</h1>
+            {seriesData.description && (
+              <p className="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">{seriesData.description}</p>
+            )}
+          </div>
+
+          {/* Grid mirroring Games layout */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {seriesData.items.map((item) => (
+              <div
+                key={item.id}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-lg p-4 border border-gray-700/50 hover:border-[var(--primary)]/50 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  {item.tag && (
+                    <span className="text-xs text-[var(--text-secondary)] bg-gray-700/50 px-2 py-1 rounded-full">{item.tag}</span>
+                  )}
+                </div>
+
+                <button
+                  onClick={() => item.link && window.open(item.link, '_blank', 'noopener,noreferrer')}
+                  className={`group w-full text-left ${!item.link ? 'cursor-default' : 'cursor-pointer'}`}
+                  disabled={!item.link}
+                >
+                  <h3 className={`text-lg font-bold flex items-center gap-1 ${
+                    item.link
+                      ? 'text-[var(--text-main)] group-hover:text-[var(--primary)] transition-colors duration-300'
+                      : 'text-[var(--text-secondary)]'
+                  }`}>
+                    {item.title}
+                    {item.link && (
+                      <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    )}
+                  </h3>
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </div>
