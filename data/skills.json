@@ -29,17 +29,12 @@
     {
       "icon": "Zap",
       "title": "Development & APIs",
-      "skills": ["REST APIs", "GRPC", "CLI Tools", "Full Stack Development", "Cache Management"]
+      "skills": ["REST APIs", "GRPC", "CLI Tools", "Full Stack Development"]
     },
     {
       "icon": "Smartphone",
       "title": "Core Concepts",
       "skills": ["Object-Oriented Programming", "Data Structures", "Algorithms", "Operating Systems", "Compilers", "Computer Networks", "Parallel Computing", "Information Security"]
-    },
-    {
-      "icon": "Globe",
-      "title": "Specialized Skills",
-      "skills": ["Custom Programming Languages", "Cache Management", "Full Stack Development"]
     }
   ]
 } 

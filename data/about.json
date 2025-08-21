@@ -1,5 +1,12 @@
 {
-  "summary": "This is a short summary about me. Coming Soon!",
+ 
+  "guide": "Explore my education, experience, projects, and more below — or follow my journey via the 'See My Journey' button in the intro.",
+  "guide2": "Find some of my favorite shows, games, and hacks in the 'Know Me More' section.",
+  "entertainment": "I love watching anime, web series, K-dramas, and movies, and I often play mobile games.",
+  "art": "I'm into football and chess. As a kid, I loved drawing and painting — and I can still sketch a bit.",
+  "music": "I listen to music whenever it feels too quiet (check out my Spotify playlist in the 'Know Me More' section).",
+  "travel": "I'm not a big traveler, but I love meeting new people and spending time with friends — they make any trip worth it.",
+  "other": "I enjoy organizing things (maybe a little OCD). Hufff… I guess that's already a lot. A long-short summary, if you will.",
   "quotes": [
     "Life's too short for bad Wi-Fi",
     "Chasing 100% on every detail… even if no one notices",
@@ -28,77 +35,53 @@
     },
     {
       "degree": "B.Tech in Computer Science",
-      "school": "IIT Roorkee - Where legends are made",
+      "school": "IIT Roorkee - Śramam vinā na kimapi sādhyam",
       "location": "Roorkee, Uttarakhand, India",
       "duration": "Nov 2020 - Jul 2024",
       "details": [
         "GPA: 9.377/10 (Almost perfect, but who's counting?)",
-        "Undergraduate Teaching Assistant for Optimization Techniques",
-        "Mentored 20 students (and survived their questions)",
-        "Part of Geek Gazette and NSO clubs"
-      ]
-    },
-    {
-      "degree": "High School Graduate",
-      "school": "Where the caffeine addiction began",
-      "location": "India",
-      "duration": "2018 - 2020",
-      "details": [
-        "Science stream with Computer Science",
-        "Learned that sleep is optional",
-        "Started the journey of 'it works on my machine'",
-        "Became a professional procrastinator"
-      ]
-    },
-    {
-      "degree": "School Days",
-      "school": "The foundation of my nerdiness",
-      "location": "India",
-      "duration": "2006 - 2018",
-      "details": [
-        "Learned to read, write, and debug life",
-        "Discovered that math is actually useful",
-        "Started collecting certificates like Pokemon",
-        "Became the family's tech support (still am)"
+        "Survived 4 years of engineering life (and the bland mess food)",
+        "Witness to the grandeur of James Thomason Building",
+        "Proud alumnus of one of India's oldest (178 yrs apparently) and most prestigious institutes "
       ]
     }
   ],
   "experience": [
     {
+      "title": "Graduate Research Assistant",
+      "company": "GAIT LAB-Purdue University",
+      "location": "West Lafayette, Indiana, USA",
+      "duration": "Aug 2025 - Present",
+      "description": "Working on developing a software for gait analysis using the AMTS forceplates.",
+      "technologies": [],
+      "details": []
+    },
+    {
+      "title": "Datamine",
+      "company": "World Wide Fund for Nature ",
+      "location": "West Lafayette, Indiana, USA",
+      "duration": "Aug 2025 - Present",
+      "description": "In progress",
+      "technologies": [],
+      "details": []
+    },
+    {
+      "title": "Undergraduate Research Assistant",
+      "company": "IIT Roorkee",
+      "location": "Roorkee, India",
+      "duration": "Jan 2024 - June 2024",
+      "description": "Developed a Gen AI-based app for mental health pre-assessments, utilizing Retrieval-Augmented Generation (RAG) to gather and summarize relevant data for assisting a scholar's research. Implemented a Streamlit interface with efficient data collection using models like Salesforce Blip and Tesseract OCR. Integrated FAISS to enhance the RAG process and deployed a Mistral LLM locally for assessment functionalities",
+      "technologies": ["Python", "Streamlit", "RAG"],
+      "details": []
+    },
+    {
       "title": "Software Developer Intern",
       "company": "NimbleEdge - Backend Wizard",
       "location": "Bangalore, India",
       "duration": "May 2023 - July 2023",
-      "description": "Worked on backend development using Gin framework (Golang) and crafted CLI tools. Reduced latency by 12% by decoupling Azure and AWS services. Also learned that production code is like cooking - everyone has an opinion!",
-      "technologies": ["Golang", "Gin Framework", "Cobra", "Docker", "Kubernetes", "GRPC"],
+      "description": "Collaborated with the backend team to add new services, decouple the code, and create interfaces for a seamless transition between Azure and Amazon Web Services in the production code reducing the latency by 12%. Worked on backend development using the Gin framework (Golang) and crafted CLI tools with the Cobra framework (Golang), adhering to the production-quality standards of the code. Also learned that production code is like cooking - everyone has an opinion!",
+      "technologies": ["Golang", "Gin Framework", "Cobra", "Docker", "Kubernetes", "GRPC", "C++", "Uber Style Coding"],
       "details": []
-    },
-    {
-      "title": "Undergraduate Teaching Assistant",
-      "company": "IIT Roorkee - Optimization Techniques",
-      "location": "Roorkee, India",
-      "duration": "2023 - 2024",
-      "description": "Mentored 20 students in Optimization Techniques, conducted lab sessions, and provided academic guidance. Survived endless questions and debugging sessions. Learned that teaching is the best way to learn.",
-      "technologies": [],
-      "details": [
-        "Conducted lab sessions and provided academic guidance",
-        "Survived endless questions and debugging sessions",
-        "Learned that teaching is the best way to learn"
-      ]
-    },
-    {
-      "title": "Student Mentorship Program",
-      "company": "IIT Roorkee - Academic & Technical Guidance",
-      "location": "Roorkee, India",
-      "duration": "2022 - 2024",
-      "description": "Led mentorship program for 20 students, helped navigate academic and technical challenges, became the go-to person for debugging life problems, and developed strong communication and leadership skills.",
-      "technologies": [],
-      "details": [
-        "Led mentorship program for 20 students",
-        "Helped navigate academic and technical challenges",
-        "Became the go-to person for debugging life problems",
-        "Developed strong communication and leadership skills"
-      ]
     }
   ]
 } 

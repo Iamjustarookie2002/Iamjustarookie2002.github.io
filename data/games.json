@@ -1,0 +1,17 @@
+{
+  "games": [
+    {
+      "id": "clash royale",
+      "title": "Clash Royale",
+      "link": "https://royaleapi.com/player/CLC89Q0YL",
+      "genre": "RTS",
+      "favorite": true
+    },
+    {
+      "id": "chess",
+      "title": "Chess",
+      "genre": "mind sport",
+      "favorite": true
+    }
+  ]
+}

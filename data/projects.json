@@ -2,25 +2,41 @@
   "description": "Here are some of my recent projects that showcase my skills and passion for development",
   "projects": [
     {
-      "title": "SereneScreen - Mental Health AI",
-      "description": "Gen AI-based app using RAG (Retrieval-Augmented Generation) for mental health pre-assessments. Integrated FAISS and deployed Mistral LLM locally. Because sometimes you need AI to understand human emotions!",
+      "title": "Portfolio Website",
+      "description": "This very portfolio you're looking at!",
+      "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
+      "github": "https://github.com/Iamjustarookie2002/Iamjustarookie2002.github.io",
+      "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "title": "Accelerating Matrix Computation on GPU",
+      "description": "Optimized CUDA matrix multiplication to achieve cuBLAS-level performance. Used coalesced memory access and 2D shared-memory tiling for data reuse. Applied register-based blocking to boost parallelism and cut shared memory traffic.",
       "technologies": ["Python", "Streamlit", "FAISS", "Mistral LLM", "Salesforce Blip", "Tesseract OCR"],
-      "github": "https://github.com",
       "image": "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
       "title": "SportTalk - Live Sports Chat",
       "description": "Web chat application for live sports matches with dynamic chat rooms. Fans can join, access live scores, and support their teams. Also includes private chat rooms for those who can't handle the public drama!",
       "technologies": ["HTML", "CSS", "JavaScript", "MongoDB", "Node.js", "Socket.IO", "Express.js"],
-      "github": "https://github.com",
       "image": "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      "title": "Portfolio Website",
-      "description": "This very portfolio you're looking at! Built with React, TypeScript, and Tailwind CSS. Features smooth animations, dark theme, and a journey timeline that tells my story with humor.",
-      "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite"],
-      "github": "https://github.com",
-      "image": "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "title": "Custom Programming Language",
+      "description": "Constructed a programming language using low-level programming tools incorporating user-friendly keywords, operators, control structures, recursive functions, and support for classes and objects.",
+      "technologies": ["Lex (Flex)", "Yacc (Bison)", "C"],
+      "image": "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "title": "Vulnerabilities and Attacks",
+      "description": "Exploited vulnerable C code with stack-smashing, buffer overflows, and DEP bypass. Tested websites for SQL injection, XSS, and CSRF vulnerabilities. Conducted attacks including dictionary, oracle padding, and length extension.",
+      "technologies": ["C", "C++", "SQL", "GDB", "Web Security"],
+      "image": "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "title": "SaS - Share & Save News",
+      "description": "A mobile application where users can save, listen to, and share news articles with friends. Designed UI pages with various views, modals, pressable elements using React Native and JavaScript. Backend functionalities is designed using NodeJS, with MongoDB for handling data management.",
+      "technologies": ["React Native", "JavaScript", "SQL", "NodeJS", "MongoDB"],
+      "image": "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg?auto=compress&cs=tinysrgb&w=800"
     }
   ]
 } 

@@ -1,0 +1,14 @@
+{
+  "title": "Series Recommendations",
+  "description": "Try these shows out!",
+  "items": [
+    {
+      "id": "anime",
+      "title": "My anime list",
+      "link": "https://anilist.co/user/Iamjustarookie/animelist",
+      "tag": "All genres"
+    }
+  ]
+}
+
+

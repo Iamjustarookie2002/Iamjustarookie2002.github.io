@@ -1,0 +1,87 @@
+{
+  "timeline": [
+    {
+      "year": "2026",
+      "type": "education",
+      "title": "MS in Computer Science",
+      "subtitle": "Purdue University (WL)",
+      "location": "West Lafayette, Indiana, USA",
+      "duration": "Aug 2024 - May 2026 (est)",
+      "iconType": "GraduationCap",
+      "highlights": [
+        "Turning lines of code into lines on my résumé",
+        "Graduate school: now with 200% more deadlines"
+      ],
+      "id": "ms-computer-science"
+    },
+    {
+      "year": "2024",
+      "type": "education",
+      "title": "B.Tech in Computer Science",
+      "subtitle": "Indian Institute of Technology, Roorkee",
+      "location": "Roorkee, Uttarakhand, India",
+      "duration": "Nov 2020 - Jul 2024",
+      "iconType": "Award",
+      "highlights": [
+        "Discovered that “final version” files rarely live up to the name",
+        "Learned to Google faster than I type"
+      ],
+      "id": "btech-computer-science"
+    },
+    {
+      "year": "2023",
+      "type": "internship",
+      "title": "Software Developer Intern",
+      "subtitle": "NimbleEdge - Backend Wizard",
+      "location": "Bangalore, India",
+      "duration": "May 2023 - July 2023",
+      "iconType": "Code",
+      "highlights": [
+        "Learned that debugging is 90% patience, 10% luck",
+        "Survived the endless loop of “it worked yesterday” syndrome"
+      ],
+      "id": "software-developer-intern"
+    },
+    {
+      "year": "2020",
+      "type": "education",
+      "title": "High School Graduate",
+      "subtitle": "Officially done, but still tired",
+      "location": "India",
+      "duration": "2018 - 2020",
+      "iconType": "GraduationCap",
+      "highlights": [
+        "Perfected the art of nodding along while daydreaming in class",
+        "Prepared for the next big leap—college life"
+      ],
+      "id": "high-school-graduate"
+    },
+    {
+      "year": "2018",
+      "type": "education",
+      "title": "School Days",
+      "subtitle": "Missing it a lot",
+      "location": "India",
+      "duration": "2006 - 2018",
+      "iconType": "GraduationCap",
+      "highlights": [
+        "Learned to read, write, and debug life",
+        "Hated it then, miss it now — classic nostalgia"
+      ],
+      "id": "school-days"
+    },
+    {
+      "year": "2002",
+      "type": "birth",
+      "title": "Born into this world",
+      "subtitle": "Officially entered the chaos",
+      "location": "India",
+      "duration": "2002",
+      "iconType": "Award",
+      "highlights": [
+        "Parents probably regretted it immediately. JK!"
+      ],
+      "id": "born"
+    }
+  ]
+}
